@@ -12,4 +12,5 @@ Notes:
 3) To cause events on ViewModels, ViewControllers are also being mocked, so that we can mock user actions and gestures at user side.
 4) Project itself is in UIKit but SwiftUI views are being used for user interface.
 5) upon request a user architecture diagram can also be provided.
+6) To see task distribution please check Projects section under same repo.
   
