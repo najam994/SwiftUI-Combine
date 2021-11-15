@@ -52,9 +52,3 @@ struct ExerciseVariationView<ViewModel>: View where ViewModel: ExerciseVariation
         .navigationTitle("Variation: \(String(viewModel.exerciseVariationId))")
     }
 }
-
-//struct ExerciseVariationView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ExerciseVariationView()
-//    }
-//}

@@ -10,11 +10,17 @@ import Combine
 
 class ExerciseListViewModel: ObservableObject {
     
-    @Published var exerciseList = [Exercise]()
-    @Published var isLoading = false
-    @Published var hasError: (Bool, String) = (false, "")
+    @Published var exerciseList = {
+        [Exercise]()
+    }()
+    @Published var isLoading = {
+        false
+    }()
+    @Published var hasError: (Bool, String) = {
+        (false, "")
+    }()
     
-    init(service: ExcerciseListServiceProtocol = ExcerciseListService()) {
+    internal init(service: ExcerciseListServiceProtocol = ExcerciseListService()) {
         self.service = service
     }
     var service: ExcerciseListServiceProtocol
@@ -22,7 +28,7 @@ class ExerciseListViewModel: ObservableObject {
         return []
     }()
     
-    func getExcersieList() {
+    private func getExcersieList() {
         self.isLoading = true
         self.service.getExcersieList()
             .sink { [weak self] completion in

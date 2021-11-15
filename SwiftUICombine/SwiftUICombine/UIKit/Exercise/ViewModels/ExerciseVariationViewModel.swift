@@ -10,9 +10,16 @@ import Combine
 
 class ExerciseVariationViewModel: ObservableObject {
     
-    @Published var exerciseInfo = Exercise()
-    @Published var hasError: (Bool, String) = (false, "")
-    @Published var isLoading = false
+    @Published var hasError: (Bool, String) = {
+        (false, "")
+    }()
+    
+    @Published private(set) var exerciseInfo = {
+        Exercise()
+    }()
+    @Published private(set) var isLoading = {
+        false
+    }()
     
     private(set) var exerciseVariationId: Int
     private(set) var service: ExcerciseListServiceProtocol
@@ -25,7 +32,7 @@ class ExerciseVariationViewModel: ObservableObject {
         return []
     }()
     
-    func getExcersieInfo() {
+    private func getExcersieInfo() {
         self.isLoading = true
         self.service.getExcersieInfo(for: self.exerciseVariationId)
             .sink { [weak self] completion in

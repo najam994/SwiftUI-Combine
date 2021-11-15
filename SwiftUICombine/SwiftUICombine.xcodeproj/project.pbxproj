@@ -147,7 +147,7 @@
 		1E42C1C3273C71BB008B83E2 /* SwiftUICombineTests */ = {
 			isa = PBXGroup;
 			children = (
-				1E42C1F72740AF88008B83E2 /* NetworkManager */,
+				1E42C1FD27411897008B83E2 /* Exercise */,
 				1E42C1C4273C71BB008B83E2 /* SwiftUICombineTests.swift */,
 			);
 			path = SwiftUICombineTests;
@@ -262,14 +262,6 @@
 				1E42C1F327409EB0008B83E2 /* Exercise.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		1E42C1F72740AF88008B83E2 /* NetworkManager */ = {
-			isa = PBXGroup;
-			children = (
-				1E42C1FD27411897008B83E2 /* Exercise */,
-			);
-			path = NetworkManager;
 			sourceTree = "<group>";
 		};
 		1E42C1FC274117BE008B83E2 /* Services */ = {

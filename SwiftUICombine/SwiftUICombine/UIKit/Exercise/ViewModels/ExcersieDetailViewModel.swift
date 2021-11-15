@@ -11,7 +11,7 @@ class ExcersieDetailViewModel: ObservableObject {
     
     @Published private(set) var exerciseObj: Exercise
     
-    init(exerciseObj: Exercise) {
+    internal init(exerciseObj: Exercise) {
         self.exerciseObj = exerciseObj
     }
 }

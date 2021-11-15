@@ -23,16 +23,17 @@ class NetworkManager {
                 }
             }
             
+            
             guard let self = self, let url = URL(string: RestApiUrls.baseUrl.rawValue.appending(method).appending(id == nil ? "" : "/\(id ?? 0)").appending("?limit=\(String(limit))")) else {
                 return promise(.failure(NetworkError.URLError))
             }
-
+            
             URLSession.shared.dataTaskPublisher(for: url)
                 .tryMap { (data, response) -> Data in
                     guard let httpResponse = response as? HTTPURLResponse,
-                            (200...299).contains(httpResponse.statusCode) else {
-                        throw NetworkError.responseError
-                    }
+                          (200...299).contains(httpResponse.statusCode) else {
+                              throw NetworkError.responseError
+                          }
                     return data
                 }
                 .decode(type: T.self, decoder: JSONDecoder())

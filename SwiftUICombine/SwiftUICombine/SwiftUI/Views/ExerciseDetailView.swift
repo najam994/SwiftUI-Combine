@@ -60,9 +60,3 @@ struct CustomHeader: View {
             ).cornerRadius(8.0)
     }
 }
-
-//struct ExerciseDetailView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ExerciseDetailView()
-//    }
-//}

@@ -59,19 +59,13 @@ struct ExcerciseRow: View {
     
     var body: some View {
         HStack{
-            KFImage(URL(string: (exercise.images.first?.image ?? "https://wger.de/media/exercise-images/113/Walking-lunges-1.png")))
+            KFImage(URL(string: (exercise.images.first?.image ?? Urls.placeHolder.rawValue)))
                 .renderingMode(.original)
                 .resizable()
-                .animation(.easeInOut(duration: 0.5)) // Animation Duration
+                .animation(.easeInOut(duration: 0.5))
                 .frame(width : 60, height : 60)
             Text(exercise.name)
             Spacer()
         }
     }
 }
-
-//struct ExerciseList_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ExerciseListView(viewModel: ExerciseListViewModel())
-//    }
-//}
