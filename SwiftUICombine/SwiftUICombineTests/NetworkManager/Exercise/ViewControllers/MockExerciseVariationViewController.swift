@@ -1,14 +1,14 @@
 //
-//  MockExerciseListViewController.swift
+//  MockExerciseVariationViewController.swift
 //  SwiftUICombineTests
 //
-//  Created by Syed Najam on 14.11.21.
+//  Created by Syed Najam on 15.11.21.
 //
 
 import Foundation
 @testable import SwiftUICombine
 
-class MockExerciseListViewController<ViewModel> where ViewModel: ExerciseListViewModel  {
+class MockExerciseVariationViewController<ViewModel> where ViewModel: ExerciseVariationViewModel  {
     
     var viewModel: ViewModel
     
@@ -19,5 +19,5 @@ class MockExerciseListViewController<ViewModel> where ViewModel: ExerciseListVie
     func shouldCallOnAppear() {
         self.viewModel.apply(.onAppear)
     }
+    
 }
-

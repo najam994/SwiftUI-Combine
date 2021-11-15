@@ -6,15 +6,63 @@
 //
 
 import SwiftUI
+import Kingfisher
 
-struct ExerciseDetailView: View {
+struct ExerciseDetailView<ViewModel>: View where ViewModel: ExcersieDetailViewModel {
+    
+    @ObservedObject var viewModel: ViewModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            Text(viewModel.exerciseObj.name)
+                .font(Font.title)
+            Section(content: {
+                ForEach(self.viewModel.exerciseObj.images){ image in
+                    KFImage(URL(string: (image.image)))
+                        .renderingMode(.original)
+                        .resizable()
+                        .animation(.easeInOut(duration: 0.5))
+                        .frame(width: UIScreen.main.bounds.size.width-100, height: UIScreen.main.bounds.size.width-100, alignment: .center)
+                }
+            }, header: {
+                CustomHeader(name: "Images")
+            })
+            Section(content: {
+                ForEach(self.viewModel.exerciseObj.images){ image in
+                    ForEach(self.viewModel.exerciseObj.variations, id : \.self) { variation in
+                        NavigationLink {
+                            ExerciseVariationView(viewModel: ExerciseVariationViewModel(exerciseVariationId: variation))
+                        } label: {
+                            Text("Variation Code: \(String(variation))")
+                        }
+                    }
+                }
+            }, header: {
+                CustomHeader(name: "Variations")
+            })
+        }.navigationTitle("Details")
     }
 }
 
-struct ExerciseDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        ExerciseDetailView()
+struct CustomHeader: View {
+    let name: String
+    
+    var body: some View {
+        Rectangle()
+            .fill(Color.gray.opacity(0.25))
+            .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+            .overlay(
+                Text(name)
+                    .foregroundColor(Color.white)
+                    .fontWeight(.bold)
+                    .padding(.horizontal), // You need this to add back the padding
+                alignment: .leading
+            ).cornerRadius(8.0)
     }
 }
+
+//struct ExerciseDetailView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ExerciseDetailView()
+//    }
+//}

@@ -14,5 +14,5 @@ class Constants {
 }
 
 enum RestApiUrls: String {
-    case baseUrl = "https://wger.de/api/v2/"
+    case baseUrl = "1https://wger.de/api/v2/"
 }

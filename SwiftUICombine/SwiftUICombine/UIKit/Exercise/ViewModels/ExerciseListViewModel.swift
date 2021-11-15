@@ -10,15 +10,17 @@ import Combine
 
 class ExerciseListViewModel: ObservableObject {
     
-    @Published private(set) var exerciseList = [Exercise]()
-    @Published private(set) var hasError: (Bool, String) = (false, "")
-    @Published private(set) var isLoading = false
+    @Published var exerciseList = [Exercise]()
+    @Published var isLoading = false
+    @Published var hasError: (Bool, String) = (false, "")
     
-    init(service: ExcersieListServiceProtocol = ExcersieListService()) {
+    init(service: ExcerciseListServiceProtocol = ExcerciseListService()) {
         self.service = service
     }
-    var service: ExcersieListServiceProtocol
-    private var cancellables: [AnyCancellable] = []
+    var service: ExcerciseListServiceProtocol
+    private lazy var cancellables: [AnyCancellable] = {
+        return []
+    }()
     
     func getExcersieList() {
         self.isLoading = true
@@ -27,6 +29,7 @@ class ExerciseListViewModel: ObservableObject {
                 switch completion{
                 case .failure(let error):
                     self?.hasError = (true, error.localizedDescription)
+                    self?.isLoading = false
                 case .finished:
                     self?.isLoading = false
                 }
@@ -38,12 +41,15 @@ class ExerciseListViewModel: ObservableObject {
     
     func apply(_ event: ExerciseListViewModelEvent) {
         switch event {
-        case .onAppear:
-            self.getExcersieList()
+        case .onAppear, .onTryAgain:
+            if self.exerciseList.count == 0 {
+                self.getExcersieList()
+            }
         }
     }
 }
 
 enum ExerciseListViewModelEvent {
     case onAppear
+    case onTryAgain
 }

@@ -1,24 +1,24 @@
 //
-//  ExerciseListViewModelTests.swift
+//  ExerciseVariationViewModel.swift
 //  SwiftUICombineTests
 //
-//  Created by Syed Najam on 14.11.21.
+//  Created by Syed Najam on 15.11.21.
 //
 
 import XCTest
 import Combine
 @testable import SwiftUICombine
 
-class ExerciseListViewModelTests: XCTestCase {
-    
-    private var viewModel: ExerciseListViewModel!
+class ExerciseVariationViewModelTests: XCTestCase {
+
+    private var viewModel: ExerciseVariationViewModel!
     private var mockService: MockExcersieListService!
-    private var viewController: MockExerciseListViewController<ExerciseListViewModel>!
+    private var viewController: MockExerciseVariationViewController<ExerciseVariationViewModel>!
 
     override func setUp() {
         self.mockService = MockExcersieListService()
-        self.viewModel = ExerciseListViewModel(service: mockService)
-        self.viewController = MockExerciseListViewController(viewModel: self.viewModel)
+        self.viewModel = ExerciseVariationViewModel(exerciseVariationId: 0, service: mockService)
+        self.viewController = MockExerciseVariationViewController(viewModel: self.viewModel)
         
     }
 
@@ -35,24 +35,24 @@ class ExerciseListViewModelTests: XCTestCase {
         self.viewController.shouldCallOnAppear()
         
         // then
-        XCTAssertTrue(self.mockService.getExcersieListCalled)
-        XCTAssertEqual(self.mockService.getExcersieListCalledCount, 1)
+        XCTAssertTrue(self.mockService.getExcersieInfoCalled)
+        XCTAssertEqual(self.mockService.getExcersieInfoCalledCount, 1)
     }
     
-    func test_ShouldGetExcerises_When_OnAppearCalled() {
+    func test_ShouldGetExceriseInfo_When_OnAppearCalled() {
         // given
-        self.mockService.getExcersieListShouldReturnData = true
+        self.mockService.getExcersieInfoShouldReturnData = true
 
         // when
         self.viewController.shouldCallOnAppear()
 
         //then
-        XCTAssertEqual(self.viewModel.exerciseList.count, 1)
+        XCTAssertNotEqual(self.viewModel.exerciseInfo.id, 0)
     }
     
     func test_ShouldReturnError_When_OnAppearCalled() {
         // given
-        self.mockService.getExcersieListShouldReturnError = true
+        self.mockService.getExcersieInfoShouldReturnError = true
 
         // when
         self.viewController.shouldCallOnAppear()

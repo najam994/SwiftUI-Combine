@@ -20,17 +20,37 @@ struct ExerciseListView<ViewModel>: View where ViewModel: ExerciseListViewModel 
     }
     
     var body: some View {
-        List(self.viewModel.exerciseList) { exercise in
-            NavigationLink {
-                
-            } label: {
-                ExcerciseRow(exercise: exercise)
+        ZStack(alignment: .center) {
+            List(self.viewModel.exerciseList) { exercise in
+                NavigationLink {
+                    ExerciseDetailView(viewModel: ExcersieDetailViewModel(exerciseObj: exercise))
+                } label: {
+                    ExcerciseRow(exercise: exercise)
+                }
             }
+            .background(Color.white)
+            ProgressView()
+                .progressViewStyle(CircularProgressViewStyle())
+                .opacity(self.viewModel.isLoading ? 1.0 : 0.0)
         }
-        .background(Color.white)
+        .alert(isPresented: $viewModel.hasError.0) {
+            Alert(
+                title: Text("Error"),
+                message: Text(viewModel.hasError.1),
+                primaryButton: .default(
+                    Text("Try Again"),
+                    action: { viewModel.apply(.onTryAgain) }
+                ),
+                secondaryButton: .destructive(
+                    Text("Cancel"),
+                    action: {}
+                )
+            )
+        }
         .onAppear {
             viewModel.apply(.onAppear)
-        }.navigationBarTitle("Exercise Names")
+        }
+        .navigationBarTitle("Exercise Names")
     }
 }
 
@@ -50,8 +70,8 @@ struct ExcerciseRow: View {
     }
 }
 
-struct ExerciseList_Previews: PreviewProvider {
-    static var previews: some View {
-        ExerciseListView(viewModel: ExerciseListViewModel())
-    }
-}
+//struct ExerciseList_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ExerciseListView(viewModel: ExerciseListViewModel())
+//    }
+//}
