@@ -15,14 +15,20 @@
 		1E42C1C5273C71BB008B83E2 /* SwiftUICombineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E42C1C4273C71BB008B83E2 /* SwiftUICombineTests.swift */; };
 		1E42C1CF273C71BB008B83E2 /* SwiftUICombineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E42C1CE273C71BB008B83E2 /* SwiftUICombineUITests.swift */; };
 		1E42C1D1273C71BB008B83E2 /* SwiftUICombineUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E42C1D0273C71BB008B83E2 /* SwiftUICombineUITestsLaunchTests.swift */; };
-		1E42C1E0273F2CDD008B83E2 /* ExerciseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E42C1DF273F2CDD008B83E2 /* ExerciseList.swift */; };
-		1E42C1E3273F2E25008B83E2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E42C1B1273C71B7008B83E2 /* MainViewController.swift */; };
+		1E42C1E0273F2CDD008B83E2 /* ExerciseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E42C1DF273F2CDD008B83E2 /* ExerciseListView.swift */; };
+		1E42C1E3273F2E25008B83E2 /* ExerciseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E42C1B1273C71B7008B83E2 /* ExerciseListViewController.swift */; };
 		1E42C1E827408469008B83E2 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E42C1E727408469008B83E2 /* NetworkManager.swift */; };
 		1E42C1EA2740847F008B83E2 /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E42C1E92740847F008B83E2 /* Connectivity.swift */; };
 		1E42C1EC274090DA008B83E2 /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E42C1EB274090DA008B83E2 /* ErrorManager.swift */; };
 		1E42C1EF274090F5008B83E2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E42C1EE274090F5008B83E2 /* Constants.swift */; };
 		1E42C1F427409EB0008B83E2 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E42C1F327409EB0008B83E2 /* Exercise.swift */; };
 		1E42C1F62740A0DF008B83E2 /* ExerciseListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E42C1F52740A0DF008B83E2 /* ExerciseListViewModel.swift */; };
+		1E42C1FB2740B07E008B83E2 /* ExerciseListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E42C1FA2740B07E008B83E2 /* ExerciseListService.swift */; };
+		1E42C1FF274118A9008B83E2 /* MockExerciseListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E42C1FE274118A9008B83E2 /* MockExerciseListService.swift */; };
+		1E42C206274123DE008B83E2 /* MockExerciseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E42C205274123DE008B83E2 /* MockExerciseListViewController.swift */; };
+		1E42C20827413ABE008B83E2 /* ExerciseListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E42C20727413ABE008B83E2 /* ExerciseListViewModelTests.swift */; };
+		1E5AAE9C2741DAAE00C424D0 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 1E5AAE9B2741DAAE00C424D0 /* Kingfisher */; };
+		1E5AAE9E2741E28900C424D0 /* ExerciseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5AAE9D2741E28900C424D0 /* ExerciseDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +52,7 @@
 		1E42C1AA273C71B7008B83E2 /* SwiftUICombine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUICombine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E42C1AD273C71B7008B83E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1E42C1AF273C71B7008B83E2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1E42C1B1273C71B7008B83E2 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		1E42C1B1273C71B7008B83E2 /* ExerciseListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListViewController.swift; sourceTree = "<group>"; };
 		1E42C1B4273C71B7008B83E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1E42C1B6273C71BA008B83E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1E42C1B9273C71BA008B83E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,13 +62,18 @@
 		1E42C1CA273C71BB008B83E2 /* SwiftUICombineUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftUICombineUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E42C1CE273C71BB008B83E2 /* SwiftUICombineUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUICombineUITests.swift; sourceTree = "<group>"; };
 		1E42C1D0273C71BB008B83E2 /* SwiftUICombineUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUICombineUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		1E42C1DF273F2CDD008B83E2 /* ExerciseList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseList.swift; sourceTree = "<group>"; };
+		1E42C1DF273F2CDD008B83E2 /* ExerciseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListView.swift; sourceTree = "<group>"; };
 		1E42C1E727408469008B83E2 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		1E42C1E92740847F008B83E2 /* Connectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
 		1E42C1EB274090DA008B83E2 /* ErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
 		1E42C1EE274090F5008B83E2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1E42C1F327409EB0008B83E2 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		1E42C1F52740A0DF008B83E2 /* ExerciseListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListViewModel.swift; sourceTree = "<group>"; };
+		1E42C1FA2740B07E008B83E2 /* ExerciseListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListService.swift; sourceTree = "<group>"; };
+		1E42C1FE274118A9008B83E2 /* MockExerciseListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockExerciseListService.swift; sourceTree = "<group>"; };
+		1E42C205274123DE008B83E2 /* MockExerciseListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockExerciseListViewController.swift; sourceTree = "<group>"; };
+		1E42C20727413ABE008B83E2 /* ExerciseListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListViewModelTests.swift; sourceTree = "<group>"; };
+		1E5AAE9D2741E28900C424D0 /* ExerciseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E5AAE9C2741DAAE00C424D0 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +137,7 @@
 		1E42C1C3273C71BB008B83E2 /* SwiftUICombineTests */ = {
 			isa = PBXGroup;
 			children = (
+				1E42C1F72740AF88008B83E2 /* NetworkManager */,
 				1E42C1C4273C71BB008B83E2 /* SwiftUICombineTests.swift */,
 			);
 			path = SwiftUICombineTests;
@@ -150,7 +163,8 @@
 		1E42C1DE273F2CC4008B83E2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1E42C1DF273F2CDD008B83E2 /* ExerciseList.swift */,
+				1E42C1DF273F2CDD008B83E2 /* ExerciseListView.swift */,
+				1E5AAE9D2741E28900C424D0 /* ExerciseDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -169,7 +183,7 @@
 		1E42C1E2273F2D7F008B83E2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				1E42C1B1273C71B7008B83E2 /* MainViewController.swift */,
+				1E42C1B1273C71B7008B83E2 /* ExerciseListViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -213,6 +227,7 @@
 		1E42C1F027409E8A008B83E2 /* Exercise */ = {
 			isa = PBXGroup;
 			children = (
+				1E42C1FC274117BE008B83E2 /* Services */,
 				1E42C1F227409EA4008B83E2 /* Models */,
 				1E42C1F127409E99008B83E2 /* ViewModels */,
 				1E42C1E2273F2D7F008B83E2 /* ViewControllers */,
@@ -236,6 +251,56 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		1E42C1F72740AF88008B83E2 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				1E42C1FD27411897008B83E2 /* Exercise */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		1E42C1FC274117BE008B83E2 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1E42C1FA2740B07E008B83E2 /* ExerciseListService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		1E42C1FD27411897008B83E2 /* Exercise */ = {
+			isa = PBXGroup;
+			children = (
+				1E42C204274123C8008B83E2 /* ViewControllers */,
+				1E42C2012741202E008B83E2 /* ViewModels */,
+				1E42C20027411EFB008B83E2 /* Services */,
+			);
+			path = Exercise;
+			sourceTree = "<group>";
+		};
+		1E42C20027411EFB008B83E2 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1E42C1FE274118A9008B83E2 /* MockExerciseListService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		1E42C2012741202E008B83E2 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				1E42C20727413ABE008B83E2 /* ExerciseListViewModelTests.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		1E42C204274123C8008B83E2 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1E42C205274123DE008B83E2 /* MockExerciseListViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -252,6 +317,9 @@
 			dependencies = (
 			);
 			name = SwiftUICombine;
+			packageProductDependencies = (
+				1E5AAE9B2741DAAE00C424D0 /* Kingfisher */,
+			);
 			productName = SwiftUICombine;
 			productReference = 1E42C1AA273C71B7008B83E2 /* SwiftUICombine.app */;
 			productType = "com.apple.product-type.application";
@@ -324,6 +392,9 @@
 				Base,
 			);
 			mainGroup = 1E42C1A1273C71B7008B83E2;
+			packageReferences = (
+				1E5AAE9A2741DAAE00C424D0 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 1E42C1AB273C71B7008B83E2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -368,11 +439,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E42C1F62740A0DF008B83E2 /* ExerciseListViewModel.swift in Sources */,
-				1E42C1E0273F2CDD008B83E2 /* ExerciseList.swift in Sources */,
+				1E5AAE9E2741E28900C424D0 /* ExerciseDetailView.swift in Sources */,
+				1E42C1E0273F2CDD008B83E2 /* ExerciseListView.swift in Sources */,
 				1E42C1AE273C71B7008B83E2 /* AppDelegate.swift in Sources */,
+				1E42C1FB2740B07E008B83E2 /* ExerciseListService.swift in Sources */,
 				1E42C1EA2740847F008B83E2 /* Connectivity.swift in Sources */,
 				1E42C1E827408469008B83E2 /* NetworkManager.swift in Sources */,
-				1E42C1E3273F2E25008B83E2 /* MainViewController.swift in Sources */,
+				1E42C1E3273F2E25008B83E2 /* ExerciseListViewController.swift in Sources */,
 				1E42C1EC274090DA008B83E2 /* ErrorManager.swift in Sources */,
 				1E42C1B0273C71B7008B83E2 /* SceneDelegate.swift in Sources */,
 				1E42C1EF274090F5008B83E2 /* Constants.swift in Sources */,
@@ -384,7 +457,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E42C206274123DE008B83E2 /* MockExerciseListViewController.swift in Sources */,
+				1E42C20827413ABE008B83E2 /* ExerciseListViewModelTests.swift in Sources */,
 				1E42C1C5273C71BB008B83E2 /* SwiftUICombineTests.swift in Sources */,
+				1E42C1FF274118A9008B83E2 /* MockExerciseListService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -740,6 +816,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1E5AAE9A2741DAAE00C424D0 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1E5AAE9B2741DAAE00C424D0 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1E5AAE9A2741DAAE00C424D0 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1E42C1A2273C71B7008B83E2 /* Project object */;
 }

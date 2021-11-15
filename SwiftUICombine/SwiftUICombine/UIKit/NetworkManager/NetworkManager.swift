@@ -15,15 +15,15 @@ class NetworkManager {
     
     private var cancellables = Set<AnyCancellable>()
     
-    func getRequest<T: Decodable>(method: String, id: Int? = nil, type: T.Type) -> Future<[T], Error> {
-        return Future<[T], Error> { [weak self] promise in
+    func getRequest<T: Decodable>(method: String, id: Int? = nil, limit: Int, type: T.Type) -> Future<T, Error> {
+        return Future<T, Error> { [weak self] promise in
             Connectivity().checkInternetConnection { isConnected in
                 if(!isConnected){
                     return promise(.failure(NetworkError.NoInternet))
                 }
             }
             
-            guard let self = self, let url = URL(string: RestApiUrls.baseUrl.rawValue.appending(method).appending(id == nil ? "" : "/\(id ?? 0)")) else {
+            guard let self = self, let url = URL(string: RestApiUrls.baseUrl.rawValue.appending(method).appending(id == nil ? "" : "/\(id ?? 0)").appending("?limit=\(String(limit))")) else {
                 return promise(.failure(NetworkError.URLError))
             }
 
@@ -35,7 +35,7 @@ class NetworkManager {
                     }
                     return data
                 }
-                .decode(type: [T].self, decoder: JSONDecoder())
+                .decode(type: T.self, decoder: JSONDecoder())
                 .receive(on: RunLoop.main)
                 .sink(receiveCompletion: { (completion) in
                     if case let .failure(error) = completion {
@@ -48,7 +48,7 @@ class NetworkManager {
                             promise(.failure(NetworkError.unknown))
                         }
                     }
-                }, receiveValue: { promise(.success($0)) })
+                }, receiveValue: { value in promise(.success(value)) })
                 .store(in: &self.cancellables)
         }
     }

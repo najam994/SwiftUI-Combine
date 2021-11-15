@@ -1,20 +1,20 @@
 //
-//  ExerciseList.swift
+//  ExerciseDetailView.swift
 //  SwiftUICombine
 //
-//  Created by Syed Najam on 13.11.21.
+//  Created by Syed Najam on 15.11.21.
 //
 
 import SwiftUI
 
-struct ExerciseList: View {
+struct ExerciseDetailView: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
-struct ExerciseList_Previews: PreviewProvider {
+struct ExerciseDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ExerciseList()
+        ExerciseDetailView()
     }
 }

@@ -11,14 +11,14 @@ struct ExerciseInfo: Decodable {
     var results: [Exercise]
 }
 
-struct Exercise: Decodable {
+struct Exercise: Decodable, Identifiable {
     var id: Int
     var name: String
     var images : [ExerciseImage]
     var variations : [Int]
 }
 
-struct ExerciseImage: Decodable {
+struct ExerciseImage: Decodable, Identifiable {
     var id: Int
     var image: String
 }
